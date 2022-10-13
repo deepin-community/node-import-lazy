@@ -1,0 +1,56 @@
+Description: replace ava by tape
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2020-12-23
+
+--- a/test.js
++++ b/test.js
+@@ -1,5 +1,5 @@
+-import test from 'ava';
+-import importLazy from '.';
++const test = require('tape');
++const importLazy = require('.');
+ 
+ const importLazyBound = importLazy(require);
+ 
+@@ -9,11 +9,13 @@
+ 
+ 	const baz = importLazyBound('./fixtures/baz');
+ 	t.is(baz('j', 's'), 'bazjs');
++	t.end();
+ });
+ 
+ test('lazy', t => {
+ 	importLazyBound('./fixtures/fail');
+ 	t.pass();
++	t.end();
+ });
+ 
+ test('props', t => {
+@@ -21,17 +23,19 @@
+ 	t.is(object.foo(), 'foo');
+ 	t.is(object.bar('j', 's'), 'barjs');
+ 	t.is(object.baz, 'baz');
++	t.end();
+ });
+ 
+ test('class', t => {
+ 	const Class = importLazyBound('./fixtures/class.js');
+ 
+ 	let instance;
+-	t.notThrows(() => {
++	t.doesNotThrow(() => {
+ 		instance = new Class('42');
+ 	});
+ 	t.true(instance instanceof Class);
+ 	t.is(instance.message, '42');
++	t.end();
+ });
+ 
+ test('destructuring makes it eager', t => {
+@@ -46,4 +50,5 @@
+ 
+ 	t.is(foo, 'bar');
+ 	t.true(invoked);
++	t.end();
+ });

@@ -1,0 +1,41 @@
+node-import-lazy (4.0.0-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Use secure copyright file specification URI.
+  * Bump debhelper from old 11 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit.
+  * Update Vcs-* headers from URL redirect.
+  * Use canonical URL in Vcs-Git.
+  * Apply multi-arch hints.
+    + node-import-lazy: Add Multi-Arch: foreign.
+
+  [ Xavier Guimard ]
+  * Bump debhelper compatibility level to 13
+  * Declare compliance with policy 4.5.1
+  * Add "Rules-Requires-Root: no"
+  * Add debian/gbp.conf
+  * Modernize debian/watch
+  * Use dh-sequence-nodejs auto install (Closes: #974387)
+  * New upstream version 4.0.0
+  * Update copyright
+  * Enable upstream test using tape instead of ava
+
+ -- Xavier Guimard <yadd@debian.org>  Wed, 23 Dec 2020 11:58:50 +0100
+
+node-import-lazy (3.0.0.REALLY.2.1.0-1) unstable; urgency=medium
+
+  * Team upload
+  * Downgrade to older version for compatibility with node-update-notifier
+  * modernize packaging
+
+ -- Pirate Praveen <praveen@debian.org>  Mon, 12 Feb 2018 16:27:01 +0530
+
+node-import-lazy (3.0.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #868440)
+
+ -- Abhiram Haridas <abhiramharidas@disroot.org>  Sat, 15 Jul 2017 12:43:24 +0000
